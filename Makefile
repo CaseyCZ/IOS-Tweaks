@@ -1,4 +1,4 @@
-SUBPROJECTS += tweaks/CaseyHello
+SUBPROJECTS += tweaks/CHello
 
 include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/aggregate.mk

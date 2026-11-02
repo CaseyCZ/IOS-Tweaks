@@ -4,7 +4,7 @@
 // The filter restricts injection to the Settings app.
 %ctor {
     @autoreleasepool {
-        NSLog(@"[CaseyHello] Loaded in %@",
+        NSLog(@"[CHello] Loaded in %@",
               [[NSBundle mainBundle] bundleIdentifier] ?: @"unknown");
     }
 }

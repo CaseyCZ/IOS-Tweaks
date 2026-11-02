@@ -4,8 +4,8 @@ THEOS_PACKAGE_SCHEME = rootless
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = CaseyHello
-CaseyHello_FILES = Tweak.xm
-CaseyHello_CFLAGS = -fobjc-arc
+TWEAK_NAME = CHello
+CHello_FILES = Tweak.xm
+CHello_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk

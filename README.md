@@ -9,7 +9,7 @@ v moderní podobě a postupně přidávat nové nápady.
 
 ## Co obsahuje první verze
 
-- `tweaks/CaseyHello/` – malý rootless tweak, který pouze zapíše zprávu do logu
+- `tweaks/CHello/` – malý rootless tweak, který pouze zapíše zprávu do logu
   po načtení v aplikaci Nastavení. Žádné systémové funkce nemění.
 - `.github/workflows/build.yml` – **ručně spouštěné** sestavení na macOS v GitHub
   Actions. Není nutný Theos na vlastním PC nebo serveru.
