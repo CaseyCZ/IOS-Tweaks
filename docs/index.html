@@ -3,45 +3,194 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090d16">
-  <meta name="description" content="IOS-Tweaks by CaseyCZ. A new iOS tweak repository, coming soon.">
-  <title>IOS-Tweaks by CaseyCZ</title>
+  <meta name="theme-color" content="#f4f7fc">
+  <meta name="description" content="IOS-Tweaks by CaseyCZ. Add the iOS tweak repository to your favorite package manager when it launches.">
+  <title>IOS-Tweaks · CaseyCZ</title>
   <style>
-    :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color-scheme: dark; }
+    :root {
+      color-scheme: light;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --page: #f4f7fc;
+      --card: #ffffff;
+      --ink: #162037;
+      --muted: #68758e;
+      --line: #e1e7f1;
+      --soft: #f7f9fd;
+      --accent: #236bf2;
+      --accent-soft: #eaf2ff;
+      --shadow: 0 18px 55px rgba(34, 61, 108, .08);
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 50% 0%, #192b48 0, #0d1321 45%, #090d16 100%); color: #f3f7ff; }
-    main { max-width: 760px; margin: 0 auto; padding: 100px 24px 72px; }
-    .hero { text-align: center; margin-bottom: 72px; }
-    .eyebrow { margin: 0 0 20px; color: #a7bad7; font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
-    h1 { margin: 0; font-size: clamp(3.1rem, 9vw, 5.3rem); letter-spacing: -.075em; line-height: 1; }
-    .tagline { margin: 24px 0 10px; font-size: clamp(1.15rem, 3vw, 1.5rem); color: #d6e1f5; }
-    .byline, .note, .detail { color: #9caec9; line-height: 1.65; }
-    .byline { margin: 0; }
-    a { color: #a6d0ff; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 34px 0 15px; }
-    .button { display: inline-block; padding: 14px 23px; border: 1px solid #4a607d; border-radius: 12px; text-decoration: none; font-weight: 700; background: #18243a; color: #eaf3ff; }
-    .button.primary { background: #4c9aff; border-color: #4c9aff; color: #061221; }
-    .button:hover { filter: brightness(1.12); }
-    .note { font-size: .86rem; margin: 0; }
-    footer { margin-top: 62px; text-align: center; color: #8e9fb8; font-size: .9rem; }
-    @media (max-width: 480px) { main { padding-top: 72px; } .hero { margin-bottom: 52px; } .button { width: 100%; } }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(ellipse 600px 350px at 50% -60px, #dceaff, transparent 95%), var(--page);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    main { width: min(720px, calc(100% - 36px)); margin: 0 auto; padding: 62px 0 38px; }
+    .intro { text-align: center; margin-bottom: 34px; }
+    .logo {
+      display: grid;
+      place-items: center;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 22px;
+      border-radius: 21px;
+      background: linear-gradient(145deg, #2875fa, #4dc4d6);
+      color: white;
+      box-shadow: 0 12px 28px rgba(35, 107, 242, .22);
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -.06em;
+    }
+    .eyebrow { margin: 0 0 7px; color: var(--accent); font-size: .77rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(2.8rem, 8vw, 4.6rem); letter-spacing: -.075em; line-height: 1.1; }
+    .tagline { margin: 15px 0 10px; font-size: 1.2rem; color: var(--muted); }
+    .author { margin: 0; color: var(--muted); font-size: .92rem; }
+    .author a { text-decoration: none; font-weight: 700; }
+    .notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 28px 0 0;
+      padding: 15px 17px;
+      border-radius: 14px;
+      background: #fff8e9;
+      border: 1px solid #f1dfad;
+      color: #75521a;
+      text-align: left;
+      font-size: .9rem;
+    }
+    .notice-icon { flex: none; font-size: 1.1rem; line-height: 1.2; }
+    .panel { margin: 20px 0; padding: 29px; border: 1px solid var(--line); border-radius: 22px; background: var(--card); box-shadow: var(--shadow); }
+    h2 { margin: 0 0 8px; font-size: 1.27rem; letter-spacing: -.025em; }
+    .section-description { margin: 0 0 23px; color: var(--muted); font-size: .93rem; }
+    .manager-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .manager {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--soft);
+      color: var(--ink);
+      text-decoration: none;
+      transition: transform .15s, border-color .15s, background .15s;
+    }
+    .manager:hover { transform: translateY(-2px); border-color: #a5bff1; background: var(--accent-soft); }
+    .manager-icon { display: grid; place-items: center; width: 44px; height: 44px; flex: none; border-radius: 13px; color: white; font-weight: 800; font-size: 1.3rem; }
+    .sileo { background: linear-gradient(140deg, #2877fc, #8055e5); }
+    .zebra { background: linear-gradient(140deg, #313d52, #67758a); }
+    .cydia { background: linear-gradient(140deg, #a46b50, #d6a187); }
+    .saily { background: linear-gradient(140deg, #28a9bd, #62d7a6); }
+    .manager-label { min-width: 0; font-weight: 750; }
+    .manager-label small { display: block; margin-top: 2px; color: var(--muted); font-size: .76rem; font-weight: 400; }
+    .manager-arrow { margin-left: auto; color: var(--muted); font-size: 1.15rem; }
+    .repo-field { display: flex; align-items: center; gap: 10px; padding: 9px 9px 9px 15px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); }
+    .repo-url { min-width: 0; flex: 1; overflow-wrap: anywhere; font-size: .86rem; font-weight: 600; }
+    .copy-button { flex: none; padding: 10px 14px; border: 0; border-radius: 9px; background: var(--accent); color: white; font: inherit; font-size: .83rem; font-weight: 750; cursor: pointer; }
+    .copy-button:hover { filter: brightness(1.08); }
+    .empty { display: flex; gap: 15px; align-items: center; padding: 18px; background: var(--soft); border: 1px dashed var(--line); border-radius: 14px; }
+    .empty-icon { flex: none; font-size: 1.7rem; }
+    .empty strong { display: block; }
+    .empty p { margin: 3px 0 0; color: var(--muted); font-size: .9rem; }
+    .fineprint { margin: 17px 0 0; color: var(--muted); font-size: .84rem; }
+    footer { margin-top: 30px; text-align: center; color: var(--muted); font-size: .86rem; }
+    footer a { text-decoration: none; font-weight: 650; }
+    @media (max-width: 520px) {
+      main { padding-top: 42px; }
+      .panel { padding: 21px; }
+      .manager-grid { grid-template-columns: 1fr; }
+      .manager { padding: 14px; }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme: dark; --page: #0b1220; --card: #151f31; --ink: #edf3ff; --muted: #a3b0c7; --line: #2b3a53; --soft: #1b2940; --accent: #80b1ff; --accent-soft: #243955; --shadow: 0 18px 55px rgba(0, 0, 0, .15); }
+      body { background: radial-gradient(ellipse 600px 350px at 50% -60px, #1e3559, transparent 95%), var(--page); }
+      .notice { background: #332b1c; border-color: #615131; color: #f4d89f; }
+      .copy-button { background: #3681ef; }
+    }
   </style>
 </head>
 <body>
   <main>
-    <header class="hero">
-      <p class="eyebrow">iOS tweaks by CaseyCZ</p>
+    <header class="intro">
+      <div class="logo" aria-hidden="true">C</div>
+      <p class="eyebrow">CaseyCZ's iOS repository</p>
       <h1>IOS-Tweaks</h1>
       <p class="tagline">Little tweaks. A more personal iPhone.</p>
-      <p class="byline">Created by <a href="https://github.com/CaseyCZ">CaseyCZ</a></p>
-      <nav class="actions" aria-label="Repository links">
-        <a class="button primary" href="sileo://source/https://caseycz.github.io/IOS-Tweaks/">Add to Sileo</a>
-        <a class="button" href="https://caseycz.github.io/IOS-Tweaks/">Repository URL</a>
-      </nav>
-      <p class="note">Coming soon — packages are not available for installation yet.</p>
+      <p class="author">Made by <a href="https://github.com/CaseyCZ">CaseyCZ</a></p>
+      <div class="notice" role="status">
+        <span class="notice-icon" aria-hidden="true">⏳</span>
+        <span><strong>Coming soon.</strong> This repository is not live yet. The links below are ready for launch, but no packages can be installed right now.</span>
+      </div>
     </header>
 
-    <footer>Made with care by CaseyCZ.</footer>
+    <section class="panel" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add repository</h2>
+      <p class="section-description">Open your favorite package manager to add this source once it launches.</p>
+      <div class="manager-grid">
+        <a class="manager" href="sileo://source/https://caseycz.github.io/IOS-Tweaks/" aria-label="Open IOS-Tweaks in Sileo">
+          <span class="manager-icon sileo" aria-hidden="true">S</span>
+          <span class="manager-label">Sileo<small>Open source</small></span>
+          <span class="manager-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="manager" href="zbra://sources/add/https://caseycz.github.io/IOS-Tweaks/" aria-label="Open IOS-Tweaks in Zebra">
+          <span class="manager-icon zebra" aria-hidden="true">Z</span>
+          <span class="manager-label">Zebra<small>Open source</small></span>
+          <span class="manager-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="manager" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://caseycz.github.io/IOS-Tweaks/" aria-label="Open IOS-Tweaks in Cydia">
+          <span class="manager-icon cydia" aria-hidden="true">C</span>
+          <span class="manager-label">Cydia<small>Open source</small></span>
+          <span class="manager-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="manager" href="apt-repo://https://caseycz.github.io/IOS-Tweaks/" aria-label="Open IOS-Tweaks in Saily">
+          <span class="manager-icon saily" aria-hidden="true">Sa</span>
+          <span class="manager-label">Saily<small>Open source</small></span>
+          <span class="manager-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="url-heading">
+      <h2 id="url-heading">Repository URL</h2>
+      <p class="section-description">Prefer to add a source manually? Copy its address.</p>
+      <div class="repo-field">
+        <span class="repo-url" id="repo-url">https://caseycz.github.io/IOS-Tweaks/</span>
+        <button class="copy-button" id="copy-button" type="button">Copy</button>
+      </div>
+      <p class="fineprint" id="copy-message" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="packages-heading">
+      <h2 id="packages-heading">Packages</h2>
+      <div class="empty">
+        <span class="empty-icon" aria-hidden="true">📦</span>
+        <div><strong>No packages yet</strong><p>Our first release is being prepared. Check back soon.</p></div>
+      </div>
+      <p class="fineprint">A compatible jailbreak is required. Compatibility with iOS 27.0.1 has not been confirmed.</p>
+    </section>
+
+    <footer>© 2026 CaseyCZ · <a href="https://github.com/CaseyCZ/IOS-Tweaks">View on GitHub</a></footer>
   </main>
+  <script>
+    const button = document.getElementById('copy-button');
+    const message = document.getElementById('copy-message');
+    const url = document.getElementById('repo-url').textContent;
+
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        message.textContent = 'Repository URL copied.';
+      } catch {
+        message.textContent = 'Select and copy this URL: ' + url;
+      }
+    });
+  </script>
 </body>
 </html>
