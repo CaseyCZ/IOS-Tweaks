@@ -10,15 +10,11 @@
 
 ---
 
-## CHello
+## Coming soon
 
-**Our first tweak · Coming soon**
+Our first tweak is being prepared. There are no packages available to install yet.
 
-CHello is the first small step for IOS-Tweaks. For now, it runs quietly when you open Settings. It doesn't change the look or behavior of your iPhone yet.
-
-**Availability:** Not released yet.
-
-**Compatibility:** A supported jailbreak will be required. iOS 27.0.1 compatibility has not been confirmed.
+A supported jailbreak will be required. iOS 27.0.1 compatibility has not been confirmed.
 
 ---
 

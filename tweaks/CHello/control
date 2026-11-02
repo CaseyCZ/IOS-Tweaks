@@ -1,9 +1,0 @@
-Package: cz.caseycz.chello
-Name: CHello
-Version: 0.1.0
-Architecture: iphoneos-arm64
-Description: Minimal rootless load-check for the IOS-Tweaks collection.
-Maintainer: CaseyCZ
-Author: CaseyCZ
-Section: Tweaks
-Depends: firmware (>= 15.0), mobilesubstrate
