@@ -1,0 +1,31 @@
+name: Build tweak (manual)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Theos
+        shell: bash
+        run: |
+          git clone --recursive --depth=1 https://github.com/theos/theos.git "$RUNNER_TEMP/theos"
+          echo "THEOS=$RUNNER_TEMP/theos" >> "$GITHUB_ENV"
+
+      - name: Build rootless package
+        shell: bash
+        run: make package FINALPACKAGE=1
+
+      - name: Upload package artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-tweaks-rootless-debs
+          path: tweaks/*/packages/*.deb
+          if-no-files-found: error

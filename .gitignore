@@ -1,0 +1,10 @@
+.DS_Store
+.theos/
+**/.theos/
+**/packages/
+dist/
+docs/debs/
+docs/Packages
+docs/Packages.gz
+docs/Release
+*.log

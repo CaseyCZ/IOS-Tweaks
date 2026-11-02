@@ -1,0 +1,9 @@
+Package: cz.caseycz.caseyhello
+Name: CaseyHello
+Version: 0.1.0
+Architecture: iphoneos-arm64
+Description: Minimal rootless load-check for the CaseyTweaks collection.
+Maintainer: CaseyCZ
+Author: CaseyCZ
+Section: Tweaks
+Depends: firmware (>= 15.0), mobilesubstrate
