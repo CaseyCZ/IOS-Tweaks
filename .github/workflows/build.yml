@@ -39,7 +39,7 @@ jobs:
 
       - name: Build rootless package
         shell: bash
-        run: make clean package FINALPACKAGE=1
+        run: make -C tweaks/CSpeed clean package FINALPACKAGE=1
 
       - name: Upload package artifacts
         uses: actions/upload-artifact@v4
