@@ -1,14 +1,10 @@
 <div align="center">
 
-# IOS-Tweaks
-
-**Little tweaks. A more personal iPhone.**
-
-Made by [CaseyCZ](https://github.com/CaseyCZ).
-
-[**Add to Sileo**](sileo://source/https://caseycz.github.io/IOS-Tweaks/) · [**Repository URL**](https://caseycz.github.io/IOS-Tweaks/)
-
-*The source is coming soon. Packages are not available for installation yet.*
+<h1>IOS-Tweaks</h1>
+<p><strong>Little tweaks. A more personal iPhone.</strong></p>
+<p>Made by <a href="https://github.com/CaseyCZ">CaseyCZ</a>.</p>
+<p><a href="sileo://source/https://caseycz.github.io/IOS-Tweaks/"><strong>Add to Sileo</strong></a> · <a href="https://caseycz.github.io/IOS-Tweaks/"><strong>Repository URL</strong></a></p>
+<p><em>The source is coming soon. Packages are not available for installation yet.</em></p>
 
 </div>
 
@@ -28,6 +24,6 @@ CHello is the first small step for IOS-Tweaks. For now, it runs quietly when you
 
 <div align="center">
 
-Made with care by **CaseyCZ**.
+<p>Made with care by <strong>CaseyCZ</strong>.</p>
 
 </div>
