@@ -1,0 +1,10 @@
+Package: cz.caseycz.cspeed
+Name: CSpeed
+Version: 0.1.0
+Architecture: iphoneos-arm64
+Maintainer: CaseyCZ
+Author: CaseyCZ
+Section: Tweaks
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader
+Description: Lightweight, configurable download and upload speed overlay for jailbroken iPhones. Preview build; compatibility is not verified.
+Homepage: https://github.com/CaseyCZ/IOS-Tweaks

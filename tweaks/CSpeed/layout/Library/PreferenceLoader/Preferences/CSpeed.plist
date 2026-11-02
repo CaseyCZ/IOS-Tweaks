@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>entry</key>
+  <dict>
+    <key>cell</key><string>PSLinkCell</string>
+    <key>label</key><string>CSpeed</string>
+  </dict>
+  <key>title</key><string>CSpeed</string>
+  <key>items</key>
+  <array>
+    <dict><key>cell</key><string>PSGroupCell</string><key>label</key><string>Network Speed</string></dict>
+    <dict>
+      <key>cell</key><string>PSSwitchCell</string>
+      <key>label</key><string>Enabled</string>
+      <key>defaults</key><string>cz.caseycz.cspeed</string>
+      <key>key</key><string>Enabled</string>
+      <key>default</key><true/>
+      <key>PostNotification</key><string>cz.caseycz.cspeed/preferencesChanged</string>
+    </dict>
+    <dict>
+      <key>cell</key><string>PSSwitchCell</string>
+      <key>label</key><string>Show Download</string>
+      <key>defaults</key><string>cz.caseycz.cspeed</string>
+      <key>key</key><string>ShowDownload</string>
+      <key>default</key><true/>
+      <key>PostNotification</key><string>cz.caseycz.cspeed/preferencesChanged</string>
+    </dict>
+    <dict>
+      <key>cell</key><string>PSSwitchCell</string>
+      <key>label</key><string>Show Upload</string>
+      <key>defaults</key><string>cz.caseycz.cspeed</string>
+      <key>key</key><string>ShowUpload</string>
+      <key>default</key><true/>
+      <key>PostNotification</key><string>cz.caseycz.cspeed/preferencesChanged</string>
+    </dict>
+    <dict>
+      <key>cell</key><string>PSSwitchCell</string>
+      <key>label</key><string>Hide When Idle</string>
+      <key>defaults</key><string>cz.caseycz.cspeed</string>
+      <key>key</key><string>HideWhenIdle</string>
+      <key>default</key><false/>
+      <key>PostNotification</key><string>cz.caseycz.cspeed/preferencesChanged</string>
+    </dict>
+    <dict><key>cell</key><string>PSGroupCell</string><key>label</key><string>Appearance &amp; Position</string></dict>
+    <dict>
+      <key>cell</key><string>PSLinkListCell</string>
+      <key>label</key><string>Position</string>
+      <key>detail</key><string>PSListItemsController</string>
+      <key>validTitles</key>
+      <array><string>Top Left</string><string>Top Right</string><string>Bottom Left</string><string>Bottom Right</string></array>
+      <key>validValues</key>
+      <array><string>topLeft</string><string>topRight</string><string>bottomLeft</string><string>bottomRight</string></array>
+      <key>defaults</key><string>cz.caseycz.cspeed</string>
+      <key>key</key><string>Position</string>
+      <key>default</key><string>bottomRight</string>
+      <key>PostNotification</key><string>cz.caseycz.cspeed/preferencesChanged</string>
+    </dict>
+    <dict>
+      <key>cell</key><string>PSLinkListCell</string>
+      <key>label</key><string>Color Scheme</string>
+      <key>detail</key><string>PSListItemsController</string>
+      <key>validTitles</key><array><string>System</string><string>Light</string><string>Dark</string></array>
+      <key>validValues</key><array><string>system</string><string>light</string><string>dark</string></array>
+      <key>defaults</key><string>cz.caseycz.cspeed</string>
+      <key>key</key><string>ColorScheme</string>
+      <key>default</key><string>system</string>
+      <key>PostNotification</key><string>cz.caseycz.cspeed/preferencesChanged</string>
+    </dict>
+    <dict><key>cell</key><string>PSGroupCell</string><key>label</key><string>Text Size</string></dict>
+    <dict>
+      <key>cell</key><string>PSSliderCell</string>
+      <key>defaults</key><string>cz.caseycz.cspeed</string>
+      <key>key</key><string>FontSize</string>
+      <key>default</key><real>12.5</real>
+      <key>min</key><real>10.0</real>
+      <key>max</key><real>20.0</real>
+      <key>showValue</key><true/>
+      <key>PostNotification</key><string>cz.caseycz.cspeed/preferencesChanged</string>
+    </dict>
+    <dict><key>cell</key><string>PSGroupCell</string><key>label</key><string>Background Opacity</string></dict>
+    <dict>
+      <key>cell</key><string>PSSliderCell</string>
+      <key>defaults</key><string>cz.caseycz.cspeed</string>
+      <key>key</key><string>Opacity</string>
+      <key>default</key><real>0.86</real>
+      <key>min</key><real>0.15</real>
+      <key>max</key><real>1.0</real>
+      <key>showValue</key><true/>
+      <key>PostNotification</key><string>cz.caseycz.cspeed/preferencesChanged</string>
+    </dict>
+    <dict><key>cell</key><string>PSGroupCell</string><key>label</key><string>Horizontal Inset</string></dict>
+    <dict>
+      <key>cell</key><string>PSSliderCell</string>
+      <key>defaults</key><string>cz.caseycz.cspeed</string>
+      <key>key</key><string>HorizontalInset</string>
+      <key>default</key><real>14.0</real>
+      <key>min</key><real>8.0</real>
+      <key>max</key><real>80.0</real>
+      <key>showValue</key><true/>
+      <key>PostNotification</key><string>cz.caseycz.cspeed/preferencesChanged</string>
+    </dict>
+    <dict><key>cell</key><string>PSGroupCell</string><key>label</key><string>Vertical Inset</string><key>footerText</key><string>Corner placement stays clear of the Dynamic Island by default. Exact placement depends on your device and iOS version.</string></dict>
+    <dict>
+      <key>cell</key><string>PSSliderCell</string>
+      <key>defaults</key><string>cz.caseycz.cspeed</string>
+      <key>key</key><string>VerticalInset</string>
+      <key>default</key><real>18.0</real>
+      <key>min</key><real>8.0</real>
+      <key>max</key><real>100.0</real>
+      <key>showValue</key><true/>
+      <key>PostNotification</key><string>cz.caseycz.cspeed/preferencesChanged</string>
+    </dict>
+  </array>
+</dict>
+</plist>

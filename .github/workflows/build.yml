@@ -1,6 +1,12 @@
-name: Build tweak (manual)
+name: Build CSpeed (rootless)
 
 on:
+  push:
+    branches: [Master]
+    paths:
+      - 'Makefile'
+      - 'tweaks/**'
+      - '.github/workflows/build.yml'
   workflow_dispatch:
 
 permissions:
@@ -13,6 +19,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Test network rate calculations
+        shell: bash
+        run: |
+          cc -std=c11 -Wall -Wextra -Werror -O2 \
+            tweaks/CSpeed/CSpeedMath.c tweaks/CSpeed/tests/test_math.c \
+            -o "$RUNNER_TEMP/cspeed-math-tests"
+          "$RUNNER_TEMP/cspeed-math-tests"
+
+      - name: Install packaging tools
+        shell: bash
+        run: brew install dpkg ldid
+
       - name: Install Theos
         shell: bash
         run: |
@@ -21,11 +39,13 @@ jobs:
 
       - name: Build rootless package
         shell: bash
-        run: make package FINALPACKAGE=1
+        run: make clean package FINALPACKAGE=1
 
       - name: Upload package artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ios-tweaks-rootless-debs
-          path: tweaks/*/packages/*.deb
+          path: |
+            packages/*.deb
+            tweaks/*/packages/*.deb
           if-no-files-found: error
