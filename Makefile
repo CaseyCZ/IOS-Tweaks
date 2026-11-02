@@ -1,8 +1,9 @@
-TARGET := iphone:clang:latest:15.0
-ARCHS := arm64 arm64e
-THEOS_PACKAGE_SCHEME := rootless
+TWEAK_DIRS := $(patsubst %/Makefile,%,$(wildcard tweaks/*/Makefile))
 
-SUBPROJECTS += $(patsubst %/Makefile,%,$(wildcard tweaks/*/Makefile))
+.PHONY: all clean package
 
-include $(THEOS)/makefiles/common.mk
-include $(THEOS_MAKE_PATH)/aggregate.mk
+all clean package:
+	@set -e; \
+	for tweak in $(TWEAK_DIRS); do \
+		$(MAKE) -C "$$tweak" $@; \
+	done
